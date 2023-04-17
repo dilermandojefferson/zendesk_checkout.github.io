@@ -1,7 +1,5 @@
 let frameElement;
 let doc;
-zE('webWidget', 'hide')
-
 zE("webWidget", "open");
 
 zE("webWidget:on", "userEvent", function (event) {
