@@ -12,6 +12,9 @@
 	<script type="text/javascript">
 		window.zESettings = {
 			webWidget: {
+				helpCenter: {
+					originalArticleButton: false
+				},
 				answerBot: {
 					avatar: {
 						url: 'img/logo.svg',
@@ -25,9 +28,11 @@
 		src="https://static.zdassets.com/ekr/snippet.js?key=37bf7310-9c29-4afa-bea2-a3aaa011ebf1"> </script>
 	<!-- End of checkout-support-br Zendesk Widget script -->
 	<script type="text/javascript">
-  	zE('webWidget', 'open');
+		zE('webWidget:on', 'close', function () {
+			window.flutter_inappwebview.callHandler('closeWebView');
+		});
 	</script>
-	
+	</script>
 </body>
 
 </html>
