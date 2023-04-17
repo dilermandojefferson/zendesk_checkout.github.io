@@ -29,9 +29,9 @@
 	<!-- End of checkout-support-br Zendesk Widget script -->
 	<script type="text/javascript">
 		zE('webWidget:on', 'close', function() {
-		  console.log('The widget has been closed!');
-		});
-	</script>
+		  window.flutter_inappwebview.callHandler('closeWebView');
+  });
+</script>
 	</script>
 </body>
 
