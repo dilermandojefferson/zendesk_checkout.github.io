@@ -29,14 +29,14 @@
 	<!-- End of checkout-support-br Zendesk Widget script -->
 	</script>
 	<script type="text/javascript">
-		zE('webWidget:on', 'open', function() {
-		  console.log('The widget has been opened!');
+		zE('webWidget:on', 'open', function () {
+			console.log('closeWebView');
 		});
 	</script>
 	<script type="text/javascript">
-		zE('webWidget:on', 'close', function() {
-		  window.flutter_inappwebview.callHandler('closeWebView');
-	  	});
+		zE('webWidget:on', 'close', function () {
+			console.log('closeWebView');
+		});
 	</script>
 </body>
 
