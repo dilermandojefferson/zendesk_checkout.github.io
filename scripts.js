@@ -1,17 +1,6 @@
 let frameElement;
 let doc;
 
-window.zESettings = {
-  webWidget: {
-    answerBot: {
-      avatar: {
-        url: 'zendesk-chat-app\img\logo.svg',
-      }
-    }
-  }
-};
-
-
 zE("webWidget", "open");
 
 zE("webWidget:on", "userEvent", function (event) {
