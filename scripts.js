@@ -1,5 +1,6 @@
 let frameElement;
 let doc;
+zE('webWidget', 'hide')
 
 zE("webWidget", "open");
 
