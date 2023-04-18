@@ -36,6 +36,10 @@
 		CloseWebViewChannel.postMessage('closeWebView');
 		});
  	</script>
-	
+	<script src="scripts.js">
+		zE('webWidget:on', 'Contact Form Submitted', function() {
+		SubmitFormWebViewChannel.postMessage('ContactFormSubmitted');
+		});
+ 	</script>
 </body>
 </html>
