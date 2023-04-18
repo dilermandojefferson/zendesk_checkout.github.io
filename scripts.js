@@ -1,6 +1,7 @@
-zE('webWidget', 'open');
+zE('messenger:on', 'open');
 
-zE("webWidget:on", "userEvent", function (event) {
+
+zE("messenger:on", "userEvent", function (event) {
   if (event.action == "Web Widget Minimised") {
   WebViewChannel.postMessage('closeWebView');}
  
@@ -11,4 +12,3 @@ zE("webWidget:on", "userEvent", function (event) {
   WebViewChannel.postMessage('FormSubmitted');}
   
 });
-
