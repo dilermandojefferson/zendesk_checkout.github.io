@@ -1,14 +1,9 @@
-zE('messenger:on', 'open');
+zE('messenger', 'open');
 
 
-zE("messenger:on", "userEvent", function (event) {
-  if (event.action == "Web Widget Minimised") {
-  WebViewChannel.postMessage('closeWebView');}
- 
-  if (event.action == "Contact Form Shown") {
-  WebViewChannel.postMessage('FormShown');}
- 
-  if (event.action == "Contact Form Submitted") {
-  WebViewChannel.postMessage('FormSubmitted');}
-  
+zE("messenger:on", "open", function () {
+  console.log(`You have opened the messaging Web Widget`)
+});
+zE("messenger:on", "close", function () {
+  WebViewChannel.postMessage('closeWebView')
 });
