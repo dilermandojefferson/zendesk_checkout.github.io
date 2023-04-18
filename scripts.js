@@ -9,6 +9,7 @@ WebViewChannel.postMessage('closeWebView');
 
 zE("webWidget:on", "userEvent", function (event) {
   if (event.action == "Web Widget Opened") {
+    WebViewChannel.postMessage('WidgetOpened')}
     setTimeout(() => hideHeader(), 3000);
   }
   
