@@ -1,6 +1,10 @@
 let frameElement;
 let doc;
+
 zE("webWidget", "open");
+
+zE('webWidget:on', 'close', function() {
+ CloseWebViewChannel.postMessage('closeWebView');
 
 zE("webWidget:on", "userEvent", function (event) {
   if (event.action == "Web Widget Opened") {
@@ -12,13 +16,14 @@ zE("webWidget:on", "userEvent", function (event) {
   }
 
   if (event.action == "Contact Form Submitted") {
-    window.flutter_inappwebview.postMessage(JSON.stringify({ sended: true }));
+    CloseWebViewChannel.postMessage('closeWebView');
   }
 });
 
+
 function changeInputs() {
-  if (window.flutter_inappwebview) {
-    window.flutter_inappwebview.postMessage(JJSON.stringify({ carregado: false }));
+  if (WebViewChannel) {
+    WebViewChannel.postMessage(JJSON.stringify({ carregado: false }));
   }
 
   setTimeout(() => {
@@ -36,8 +41,8 @@ function changeInputs() {
   }, 2000);
 
   setTimeout(() => {
-    if (window.flutter_inappwebview) {
-      window.flutter_inappwebview.postMessage(
+    if (WebViewChannel) {
+      WebViewChannel.postMessage(
         JSON.stringify({ carregado: true })
       );
     }
@@ -295,9 +300,9 @@ function hideHeader() {
     doc.head.appendChild(tag);
 
     setTimeout(() => {
-      if (window.flutter_inappwebview) {
-        window.flutter_inappwebview.postMessage(
-          JSON.stringify({ carregado: true })
+      if (WebViewChannel) {
+        WebViewChannel.postMessage(
+          JSON.stringify({carregado: true })
         );
       }
     }, 2000);
