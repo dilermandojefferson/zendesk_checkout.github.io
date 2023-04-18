@@ -1,12 +1,8 @@
 zE('webWidget', 'open');
 
-zE('webWidget:on', 'close', function() {
-WebViewChannel.postMessage('closeWebView');
-});
-
 zE("webWidget:on", "userEvent", function (event) {
-  if (event.action == "Web Widget Opened") {
-  WebViewChannel.postMessage('WidgetOpened');}
+  if (event.action == "close") {
+  WebViewChannel.postMessage('closeWebView');}
  
   if (event.action == "Contact Form Shown") {
   WebViewChannel.postMessage('FormShown');}
