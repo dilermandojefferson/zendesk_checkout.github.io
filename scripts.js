@@ -4,10 +4,10 @@ let doc;
 zE('webWidget', 'open');
 
 zE('webWidget:on', 'close', function() {
-CloseWebViewChannel.postMessage('closeWebView');
+WebViewChannel.postMessage('closeWebView');
 });
 
 zE("webWidget:on", "userEvent", function (event) {
   if (event.action == "Contact Form Submitted") {
-  FormSubmittedChannel.postMessage('FormSubmitted')}
+  WebViewChannel.postMessage('FormSubmitted')}
 });
