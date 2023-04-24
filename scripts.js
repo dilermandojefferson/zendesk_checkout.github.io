@@ -6,13 +6,12 @@ zE("webWidget:on", "userEvent", function (event) {
   if (event.action == "Web Widget Opened") {
     WebViewChannel.postMessage('openWebView');
   }
-  zE("webWidget:on", "Web Widget Minimised", function () {
+  if (event.action == "Web Widget Minimised") {
     WebViewChannel.postMessage('closeWebView');
-  });
-
-  zE("webWidget:on", "Contact Form Submitted", function () {
+  }
+  if (event.action == "Contact Form Submitted") {
     WebViewChannel.postMessage('FormSubmitted');
-  });
+  }
 });
 
 // //messenger
@@ -24,3 +23,4 @@ zE("webWidget:on", "userEvent", function (event) {
 //     WebViewChannel.postMessage('closeWebView');
 //   }
 // });
+// zE("messenger:set", "cookies", true)
