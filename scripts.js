@@ -6,10 +6,6 @@ zE('webWidget:on', 'close', function() {
 WebViewChannel.postMessage('closeWebView');
 });
 
-zE('webWidget:on', "Web Widget Opened", function() {
-WebViewChannel.postMessage('openWebView');
-});
-
 zE('webWidget:on', "Web Widget Minimised", function() {
 WebViewChannel.postMessage('closeWebView');
 });
