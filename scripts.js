@@ -2,17 +2,15 @@
 zE("webWidget", "open");
 
 //webWidget
-zE("webWidget:on", "userEvent", function (event) {
-  if (event.action == "Web Widget Opened") {
+zE('webWidget:on', "Web Widget Opened", function() {
     WebViewChannel.postMessage('openWebView');
-  }
-  if (event.action == "Web Widget Minimised") {
+  });
+zE('webWidget:on', "Web Widget Minimised", function() {
     WebViewChannel.postMessage('closeWebView');
-  }
-  if (event.action == "Contact Form Submitted") {
-    WebViewChannel.postMessage('FormSubmitted');
-  }
-});
+  });
+zE('webWidget:on', "Contact Form Submitted", function() {
+    WebViewChannel.postMessage('FormSubmitted'');
+  });
 
 // //messenger
 // zE("messenger:on", "userEvent", function (event) {
