@@ -1,16 +1,22 @@
-// zE('messenger', 'open');
-zE("webWidget", "open");
 
-//webWidget
+zE("webWidget", "open");
+// zE('messenger', 'open');
+
+zE('webWidget:on', 'close', function() {
+WebViewChannel.postMessage('closeWebView');
+});
+
 zE('webWidget:on', "Web Widget Opened", function() {
-    WebViewChannel.postMessage('openWebView');
-  });
+WebViewChannel.postMessage('openWebView');
+});
+
 zE('webWidget:on', "Web Widget Minimised", function() {
-    WebViewChannel.postMessage('closeWebView');
-  });
+WebViewChannel.postMessage('closeWebView');
+});
+
 zE('webWidget:on', "Contact Form Submitted", function() {
-    WebViewChannel.postMessage('FormSubmitted'');
-  });
+WebViewChannel.postMessage('FormSubmitted');
+});
 
 // //messenger
 // zE("messenger:on", "userEvent", function (event) {
