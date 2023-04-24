@@ -1,16 +1,27 @@
-zE("messenger:on", "open", function () {
-  WebViewChannel.postMessage('openWebView')
-});
-zE("webWidget:on", "open", function () {
-  WebViewChannel.postMessage('openWebView')
-});
-
 zE('messenger', 'open');
 zE("webWidget", "open");
 
-zE("messenger:on", "close", function () {
-  WebViewChannel.postMessage('closeWebView')
+//webWidget
+zE("webWidget:on", "userEvent", function (event) {
+  if (event.action == "Web Widget Opened	") {
+    WebViewChannel.postMessage('openWebView');
+  }
+  zE("webWidget:on", "Web Widget Minimised", function () {
+    WebViewChannel.postMessage('closeWebView');
+  });
+
+  zE("webWidget:on", "Contact Form Submitted", function () {
+    WebViewChannel.postMessage('FormSubmitted');
+  });
 });
-zE("webWidget:on", "close", function () {
-  WebViewChannel.postMessage('closeWebView')
+
+//messenger
+zE("messenger:on", "userEvent", function (event) {
+  if (event.action == "open") {
+    WebViewChannel.postMessage('openWebView');
+  }
+  if (event.action == "close") {
+    WebViewChannel.postMessage('closeWebView');
+  }
 });
+
