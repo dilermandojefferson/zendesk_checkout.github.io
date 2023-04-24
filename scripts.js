@@ -3,7 +3,7 @@ zE("webWidget", "open");
 
 //webWidget
 zE("webWidget:on", "userEvent", function (event) {
-  if (event.action == "Web Widget Opened	") {
+  if (event.action == "Web Widget Opened") {
     WebViewChannel.postMessage('openWebView');
   }
   zE("webWidget:on", "Web Widget Minimised", function () {
