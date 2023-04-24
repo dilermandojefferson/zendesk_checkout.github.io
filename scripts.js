@@ -3,13 +3,13 @@ zE("webWidget", "open");
 
 //webWidget
 zE("webWidget:on", "userEvent", function (event) {
-  if (event == "Web Widget Opened") {
+  if (event.action == "Web Widget Opened") {
     WebViewChannel.postMessage('openWebView');
   }
-  if (event == "Web Widget Minimised") {
+  if (event.action == "Web Widget Minimised") {
     WebViewChannel.postMessage('closeWebView');
   }
-  if (event == "Contact Form Submitted") {
+  if (event.action == "Contact Form Submitted") {
     WebViewChannel.postMessage('FormSubmitted');
   }
 });
