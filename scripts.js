@@ -6,9 +6,14 @@ zE('webWidget:on', 'close', function() {
 WebViewChannel.postMessage('closeWebView');
 });
 
-zE('webWidget:on', 'Contact Form Submitted', function() {
-    WebViewChannel.postMessage('FormSubmitted');
-  });
+zE("webWidget:on", "userEvent", function (event) {
+  if (event.action == "Contact Form Shown") {
+  WebViewChannel.postMessage('FormShown')}
+  
+  if (event.action == "Contact Form Submitted") {
+  WebViewChannel.postMessage('FormSubmitted')}
+  
+});
 
 // //messenger
 // zE("messenger:on", "userEvent", function (event) {
