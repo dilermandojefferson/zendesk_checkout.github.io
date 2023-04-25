@@ -9,7 +9,7 @@ WebViewChannel.postMessage('closeWebView');
 
 zE("webWidget:on", "userEvent", function (event) {
   if (event.action == "Web Widget Opened") {
-    setTimeout(() => hideHeader(), 500);
+    setTimeout(() => hideHeader(), 300);
   }
   if (event.action == 'Contact Form Shown') {
     WebViewChannel.postMessage('FormShown');
