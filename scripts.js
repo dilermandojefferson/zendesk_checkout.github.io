@@ -21,7 +21,6 @@ zE("webWidget:on", "userEvent", function (event) {
   
 });
 
-
 function hideHeader() {
   frameElement = document.getElementById("webWidget");
   if (frameElement) {
@@ -47,12 +46,6 @@ function hideHeader() {
         border-radius: 0 !important;
         display: flex !important;
         align-items: center !important;
-      }
-      textarea[name='description'].bcdGHE {
-        width: unset !important;
-        height: unset !important;
-        min-width: unset !important;
-
       }
       button[data-garden-id='buttons.icon_button'].fgvvBn {
         height: 56px !important;
