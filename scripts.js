@@ -39,7 +39,7 @@ function hideHeader() {
       .kSCaYV > div > div {
         margin-top: -8px !important;
       }
-      textarea[data-garden-id='forms.textarea'] {
+      textarea[name='answerBotInputValue'] {
         height: 56px !important;
         width: 100% !important;
         background-color: #F4F3F5 !important;
